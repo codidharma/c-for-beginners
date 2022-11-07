@@ -1,4 +1,5 @@
 # Table of Contents
+* [First C Program](#first-c-program)
 * [Basics Of C Programming](#basics-of-c-programming)
     * [Variables](#variables)
         * [Rules of Variable Nomenclature](#rules-of-variable-nomenclature)
@@ -9,6 +10,32 @@
             * [Character Constants](#character-constants)
 
 ---
+
+# First C Program
+
+The very first program that we can write in C is the hello world. As the name suggests, this program does nothing but prints the hellow world on the terminal. The hellow world program can be written as follows
+
+```C
+#include<stdio.h>
+
+int main()
+{
+    printf("Hello world\n");
+    return 0;
+}
+```
+
+Lets talk about the program a little bit and understand the anatomy of the program.
+1. A C program despite its complexity can be boiled down to a mixture of declarations, variables and functions
+2. A function as the name suggests contains some lines of code which when combined together will serve a purpose
+3. In secnario above, the `main` is the function which conatins the logic which will be executed.
+4. The `main` function has some lines in it and returns an integer as indicated by the `int` placed before the function name.
+5. The `#include` is used to add references to certain libraries files where there are pieces of code defined. In our case we are referencing the `stdio.h` library which contains standard input output functions
+6. The function `printf` if part of the `stdio` library and is available to us only because we included the library at the start of the program.
+7. The `pintf` function allows us to print anything on the screen, we can print characters, sentences, numbers etc.
+8. The `return 0` means that we are returning 0 when the program executes successfuly. A non zero result means the program executin failed
+9. The `()` in  `main()` denotes the list of inputs the function can accept. In this case it does not accept any inputs
+10. The statements in the function are grouped between `{}`. Each statement needs to be terminated using the `;`
 
 
 
@@ -45,7 +72,11 @@ Lets consider Primary constants for now. Other constants will be covered in the 
 
 ### Primary Constants
 
-The primary constants in C are divided into following types
+The primary constants in C are divided into following types. Each of the constant needs to be defined using a  const key word. This will tell the compiler to mark that constant as readonly during compilation and then the value of the constant can not be changed.
+
+```C
+const int = 123434;
+```
 
 #### Integer Constants
 
@@ -74,6 +105,34 @@ Following are the rules for constructing character constants
 1. The character constant needs to be a single digit or special character or a letter from the alphabet. The character needs to be in single quotes
 `'A', '1', '$'` are examples of valid character constants while `'12'`, `'$$'` are examples of invalid character constants
 
+
+>The constants which are to be used in the code can be defined and externalized to the main function. These constants can then be referred in different functions using their names.
+For example
+>
+```C
+#include<stdio.h>;
+
+#define float PI = 3.1413
+
+int main()
+{
+    printf("Value of Pi is %f\n", PI);
+
+}
+```
+
+
 # Reserved Keywords
 
 Now that we have learnt about variables and constants, we know that we can use meaning full names to create variables, but there are certain words that are reserved by the C language as part of its grammar. It simply means that these words have certain meaning and we can not use these names as the compiler already knows the meaning of these reserved keywords. In C there are only 32 reserved names. These are highlighted below
+
+|Column1|Column2|Column3|Column4|
+|----|----|----|-----|
+|auto|double|int|struct|
+|break|else|long|switch|
+|case|enum|register|typedef|
+|char|extern|return|union|
+|const|float|short|unsigned|
+|continue|for|signed|void|
+|default|goto|sideof|volatile|
+|do|if|static|while|
