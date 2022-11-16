@@ -3,7 +3,7 @@
 
 int main()
 {
-    char c = '1'; //Single character %c as format specifier
+    char c = '1212'; //Single character %c as format specifier
     char charArray[] = "This is char array";  // Char array. Uses %s as format specifier
 
     float f = 4.56758585855; //uses 4 bytes - precison upto 6-7 digits after decimal point. %f as format specifier
